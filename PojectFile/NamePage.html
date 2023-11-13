@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Projeect1.css">
+    <title>Random Name</title>
+</head>
+<body>
+
+    <h1 class="GroupNames">أسماء الطالبات</h1>
+    <ul id="nameList">
+        <li>ريناد محمد الشمراني</li>
+        <li>لمى عيسى هملان</li>
+        <li>لمى مسعد العنزي</li>
+        <li>سارة زياد مدني</li>
+    </ul>
+    <script>
+        // Function to display a random name
+        function randomName() {
+            // Get all list items
+            names = nameList.getElementsByTagName("li");
+            // Choose a random index
+             randomIndex = Math.floor(Math.random() * names.length);
+            // Display the random name
+            nameList.innerHTML = `<li>${names[randomIndex].textContent}</li>`;
+        }
+
+        // Call displayRandom on page load
+        randomName();
+    </script>
+</body>
+</html>

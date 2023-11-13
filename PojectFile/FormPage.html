@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="FormP.css">
+
+    <script>
+      function Validation() {
+          let name = document.forms["Form1"]["Yourname"].value;
+
+          if (name == "") {
+              alert("Empty field is not accepted");
+              return false;
+          }
+
+          // Check if the name contains only letters
+          if (!/^[a-zA-Z\u0600-\u06FF]+$/.test(name)) {
+                alert("Only letters Allowed in  'الاسم'  area");
+                return false;}
+      }
+  </script>
+</head>
+<body>
+  <h2>تواصل معنا</h2>
+  <h1>رجاءً قم بتعبئة الحقول المطلوبة</h1>
+
+  <form
+        name="Form1"
+        action="https://formspree.io/f/mrgwvbjz"
+        method="post"
+        onsubmit="return Validation()"
+    >
+        <label for="Yourname">:الاسم</label>
+        <input type="text" id="Yourname" name="Yourname" placeholder="أدخل اسمك">
+
+        <label for="email">:البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="أدخل البريد الإلكتروني">
+
+        <label for="message">:رسالتك</label>
+        <textarea id="message" name="message" rows="4" placeholder="أدخل رسالتك"></textarea>
+
+        <button type="submit">إرسال</button>
+    </form>
+                    
+</html>
